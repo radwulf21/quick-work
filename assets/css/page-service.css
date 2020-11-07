@@ -1,0 +1,169 @@
+#page-service {
+    background: var(--color-background);
+}
+
+#container h1 {
+    font: 500 3rem Poppins;
+
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.cards {
+    margin-bottom: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards .card {
+    margin: 2rem 0;
+
+    background-color: var(--color-box-base);
+
+    padding: 5.6rem;
+
+    border-radius: 0.8rem;
+
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.cards .card .top-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cards .card .top-card .name-and-city {
+    display: flex;
+    align-items: center;
+    
+    gap: 1rem;
+}
+
+.cards .card .top-card .status {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.cards .card .top-card .status p {
+    font-size: 2.2rem;
+}
+
+.cards .card .phone {
+    margin-bottom: 2rem;
+}
+
+.cards .card .description {
+    margin: 2rem 0;
+
+    text-align: justify;
+}
+
+.cards .card .service-options {
+    margin-top: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cards .card .service-options .button {
+    width: 22.2rem;
+    height: 4.2rem;
+
+    border: 0;
+    border-radius: 0.8rem;
+
+    color: var(--color-text-button);
+
+    font: 700 1.8rem Poppins;
+
+    transition: 400ms;
+
+    cursor: pointer;
+
+    outline: none;
+    text-decoration: none;
+}
+
+.cards .card .service-options .button-contact-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    gap: 1rem;
+
+    background: var(--color-button-whatsapp);
+}
+
+.cards .card .service-options .button-contact-whatsapp:hover {
+    transform: translateY(-0.3rem);
+    background-color: var(--color-button-whatsapp-dark);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo para botão de confirmar serviços */
+.cards .card .service-options .form-confirm-service .button-confirm-service {
+    background: var(--color-primary-warning);
+}
+
+.cards .card .service-options .form-confirm-service .button-confirm-service:hover {
+    transform: translateY(-0.3rem);
+    background-color: var(--color-primary-warning-dark);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo para botão de terminar serviços */
+.cards .card .service-options .form-finish-request .button-finish-request {
+    background: var(--color-primary);
+}
+
+.cards .card .service-options .form-finish-request .button-finish-request:hover {
+    transform: translateY(-0.3rem);
+    background-color: var(--color-primary-dark);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo para botão de terminar serviços */
+.cards .card .service-options .form-close-request .button-close-request {
+    background: var(--color-primary-danger);
+}
+
+.cards .card .service-options .form-close-request .button-close-request:hover {
+    transform: translateY(-0.3rem);
+    background-color: var(--color-primary-danger-dark);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+@media(max-width: 700px) {
+    .cards .card {
+        padding: 3rem;
+        width: auto;
+    }
+
+    .cards .card .top-card {
+        flex-direction: column;
+    }
+
+    .cards .card .phone {
+        text-align: center;
+    }
+
+    .cards .card .service-options {
+        flex-direction: column;
+        align-items: unset;
+
+        gap: 2rem;
+    }
+
+    .cards .card .service-options .button {
+        width: 100%;
+    }
+}

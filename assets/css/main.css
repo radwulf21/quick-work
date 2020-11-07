@@ -1,0 +1,48 @@
+:root {
+    /* Variáveis para paleta de cores do site */
+    --color-background: #FFD698;
+    --color-primary: #FF9D48;
+    --color-primary-dark: #F5933E;
+    --color-secondary: #999999;
+    --color-secondary-dark: #8F8F8F;
+    --color-secondary-darker: #6B6B6B;
+    --color-primary-warning: #FBD870;
+    --color-primary-warning-dark: #F1CE66;
+    --color-primary-danger: #FF4848;
+    --color-primary-danger-dark: #F53E3E;
+    --color-title: #FFFFFF;
+    --color-text-button: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-base: #F0F0F6;
+    --color-button-whatsapp: #1EBEA5;
+    --color-button-whatsapp-dark: #14B49B;
+
+    /* tamanho da fonte padrão: 16px = 100% = 1rem*/
+    font-size: 60%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body,
+input,
+button,
+textarea {
+    font-weight: 500;
+    font-size: 1.6rem;
+    font-family: Poppins;
+}
+
+#container {
+    width: 90vw;
+    max-width: 1100px;
+    margin: 0 auto;
+}

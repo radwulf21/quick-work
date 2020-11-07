@@ -1,0 +1,140 @@
+#page-update-info {
+    background: var(--color-background);
+}
+
+.card {
+    background-color: var(--color-box-base);
+
+    border-radius: 0.8rem;
+    margin: 4rem auto;
+
+    padding: 5.6rem;
+
+    max-width: 580px;
+
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.card h1 {
+    font-weight: 500;
+    font-size: 2.4rem;
+    text-align: center;
+
+    margin-bottom: 4rem;
+}
+
+.card fieldset {
+    border: none;
+}
+
+.card legend {
+    font-size: 2rem;
+}
+
+.card .field-group {
+    margin: 4rem 0;
+
+    display: flex;
+}
+
+.card .field-group .field {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.card .field-group .field + .field {
+    margin-left: 3rem;
+}
+
+.card .field-group .field input,
+.card .field-group .field textarea {
+    background-color: var(--color-base);
+
+    border: 0;
+    border-radius: 0.8rem;
+
+    padding: 1rem 2rem;
+}
+
+.card .field-group .field textarea {
+    resize: none;
+
+    height: 15rem;
+}
+
+.card .form-update-password {
+    margin-bottom: 4rem;
+}
+
+.card .form-delete-account {
+    margin-top: 4rem;
+}
+
+.button {
+    text-decoration: none;
+    outline: none;
+
+    width: 100%;
+    height: 4.2rem;
+
+    border: 0;
+    border-radius: 0.8rem;
+
+    font: 700 1.8rem Poppins;
+
+    color: var(--color-text-button);
+
+    transition: 400ms;
+
+    cursor: pointer;
+}
+
+.button-update-data {
+    background: var(--color-primary);
+
+    margin-bottom: 4rem;
+}
+
+.button-update-data:hover {
+    transform: translateY(-0.3rem);
+    background-color: var(--color-primary-dark);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.button-update-password {
+    background: var(--color-primary);
+}
+
+.button-update-password:hover {
+    transform: translateY(-0.3rem);
+    background-color: var(--color-primary-dark);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.button-delete-account {
+    background: var(--color-primary-danger);
+}
+
+.button-delete-account:hover {
+    transform: translateY(-0.3rem);
+    background: var(--color-primary-danger-dark);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 700px) {
+    .card {
+        padding: 3rem;
+        width: auto;
+    }
+
+    .card .field-group {
+        flex-direction: column;
+    }
+
+    .card .field-group .field + .field {
+        margin-left: 0;
+        margin-top: 4rem;
+    }
+}
