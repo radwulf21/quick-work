@@ -18,7 +18,7 @@
             <h2>Quick Work</h2>
         </header>
 
-        <form action="#" method="">
+        <form action="../controller/cadastrarCliente.php" method="POST">
             <h1>Cadastro de Cliente</h1>
 
             <fieldset>
