@@ -49,6 +49,7 @@
 }
 
 .card .field-group .field input,
+.card .field-group .field select,
 .card .field-group .field textarea {
     background-color: var(--color-base);
 
@@ -62,6 +63,8 @@
     resize: none;
 
     height: 15rem;
+
+    text-align: justify;
 }
 
 .card .form-update-password {

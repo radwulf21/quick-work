@@ -90,15 +90,15 @@
                     <div class="field-group">
                         <div class="field">
                             <label for="categoria">Categoria</label>
-                            <input list="categorias" name="categoria" id="categoria" placeholder="Selecione" required>
-                            <datalist id="categorias">
-                                <option value="Hidráulica">
-                                <option value="Elétrica">
-                                <option value="Construção">
-                                <option value="Marcenaria">
-                                <option value="Serralheria">
-                                <option value="Pintura Residencial">
-                            </datalist> 
+                            <select name="categoria" id="categoria" required>
+                                <option value="">Selecione</option>
+                                <option value="1">Hidráulica</option>
+                                <option value="2">Elétrica</option>
+                                <option value="3">Construção</option>
+                                <option value="4">Marcenaria</option>
+                                <option value="5">Serralheria</option>
+                                <option value="6">Pintura Residencial</option>
+                            </select>
                         </div>
                     </div>
 
