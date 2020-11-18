@@ -11,7 +11,7 @@
                 $stmt->bindValue(1, $email);
                 $stmt->bindValue(2, $senha);
                 $stmt->execute();
-                return $stmt->rowCount();
+                return $stmt->fetch();
             } catch (PDOException $erro) {
                 $erro->getMessage();
             }
@@ -25,7 +25,7 @@
                 $stmt->bindValue(1, $email);
                 $stmt->bindValue(2, $senha);
                 $stmt->execute();
-                return $stmt->rowCount();
+                return $stmt->fetch();
             } catch (PDOException $erro) {
                 $erro->getMessage();
             }

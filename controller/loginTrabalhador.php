@@ -6,13 +6,12 @@
     $email = utf8_decode($_POST['email']);
     $senha = utf8_decode(md5($_POST['senha']));
 
-    $linhasAfetadas = $log->buscarTrabalhador($email, $senha);
+    $trabalhador = $log->buscarTrabalhador($email, $senha);
 
-    echo $linhasAfetadas;
-
-    if ($linhasAfetadas > 0) {
+    if ($trabalhador != null) {
         $log->login();
         $_SESSION['usuario'] = 'Trabalhador';
+        $_SESSION['id_trabalhador'] = $trabalhador['id'];
         
         header('Location:../view/service-remaining.php');
     } else {

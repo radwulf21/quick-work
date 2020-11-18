@@ -6,13 +6,12 @@
     $email = utf8_decode($_POST['email']);
     $senha = utf8_decode(md5($_POST['senha']));
 
-    $linhasAfetadas = $log->buscarCliente($email, $senha);
+    $cliente = $log->buscarCliente($email, $senha);
 
-    echo $linhasAfetadas;
-
-    if ($linhasAfetadas > 0) {
+    if ($cliente != null) {
         $log->login();
         $_SESSION['usuario'] = 'Cliente';
+        $_SESSION['id_cliente'] = $cliente['id'];
         
         header('Location:../view/category-work.php');
     } else {
