@@ -6,7 +6,7 @@
     $email = utf8_decode($_POST['email']);
     $senha = utf8_decode(md5($_POST['senha']));
 
-    $cliente = $log->buscarCliente($email, $senha);
+    $cliente = $log->verificarCredenciaisCliente($email, $senha);
 
     if ($cliente != null) {
         $log->login();

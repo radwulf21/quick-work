@@ -9,7 +9,7 @@
         $_POST['telefone'], 
         $_POST['cidade'], 
         $_POST['email'],
-        $_POST['senha']
+        $_POST['id']
     ]);
 
     $cliente = new Cliente;
@@ -19,10 +19,10 @@
     $cliente->telefone  = $dadosCliente[2];
     $cliente->cidade    = $dadosCliente[3];
     $cliente->email     = $dadosCliente[4];
-    $cliente->senha     = md5($dadosCliente[5]);
+    $cliente->id        = $dadosCliente[5];
 
     $clienteDAO = new ClienteDAO;
 
-    $clienteDAO->cadastrarCliente($cliente);
+    $clienteDAO->alterarDadosCliente($cliente);
 
-    header('Location:../view/login-client.php');
+    header('Location:../view/update-info-client.php');

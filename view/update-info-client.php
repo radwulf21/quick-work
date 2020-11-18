@@ -15,6 +15,8 @@
 <body id="page-update-info">
     <?php if (isset($_SESSION['login']) && $_SESSION['usuario'] == "Cliente") { ?>
 
+        <?php require_once '../controller/buscarDadosCliente.php'; ?>
+
         <?php require_once "header-client.php"; ?>
 
         <div id="container">
@@ -22,32 +24,33 @@
             <div class="card">
                 <h1>Atualizar dados de cliente</h1>
 
-                <form action="#" method="" class="form-personal-data">
-                    <input type="hidden" value="">
+                <form action="../controller/atualizarDadosCliente.php" method="POST" class="form-personal-data">
                     <fieldset>
                         <legend>Dados Pessoais</legend>
+
+                        <input type="hidden" name="id" id="id" value="<?php echo $_SESSION['id_cliente']; ?>">
 
                         <div class="field-group">
                             <div class="field">
                                 <label for="nome">Nome</label>
-                                <input type="text" name="nome" id="nome" required>
+                                <input type="text" name="nome" id="nome" value="<?php echo $dadosCliente[0]; ?>" required>
                             </div>
 
                             <div class="field">
                                 <label for="sobrenome">Sobrenome</label>
-                                <input type="text" name="sobrenome" id="sobrenome" required>
+                                <input type="text" name="sobrenome" id="sobrenome"value="<?php echo $dadosCliente[1]; ?>" required>
                             </div>
                         </div>
 
                         <div class="field-group">
                             <div class="field">
                                 <label for="telefone">Telefone</label>
-                                <input type="text" name="telefone" id="telefone" required>
+                                <input type="text" name="telefone" id="telefone" value="<?php echo $dadosCliente[2]; ?>" required>
                             </div>
 
                             <div class="field">
                                 <label for="cidade">Cidade</label>
-                                <input list="cidades" name="cidade" id="cidade" placeholder="Selecione" required>
+                                <input list="cidades" name="cidade" id="cidade" placeholder="Selecione" value="<?php echo $dadosCliente[3]; ?>" required>
                                 <datalist id="cidades">
                                     <option value="Brasília">
                                     <option value="Riacho Fundo">
@@ -83,7 +86,7 @@
                         <div class="field-group">
                             <div class="field">
                                 <label for="email">E-mail</label>
-                                <input type="text" name="email" id="email" required>
+                                <input type="text" name="email" id="email" value="<?php echo $dadosCliente[4]; ?>" required>
                             </div>
                         </div>
                     </fieldset>

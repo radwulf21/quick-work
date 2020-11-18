@@ -6,7 +6,7 @@
     $email = utf8_decode($_POST['email']);
     $senha = utf8_decode(md5($_POST['senha']));
 
-    $trabalhador = $log->buscarTrabalhador($email, $senha);
+    $trabalhador = $log->verificarCredenciaisTrabalhor($email, $senha);
 
     if ($trabalhador != null) {
         $log->login();

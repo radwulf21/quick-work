@@ -23,9 +23,10 @@
                 <h1>Atualizar dados de trabalhador</h1>
 
                 <form action="#" method="" class="form-personal-data">
-                    <input type="hidden" value="">
                     <fieldset>
                         <legend>Dados Pessoais</legend>
+
+                        <input type="hidden" name="id" value="">
 
                         <div class="field-group">
                             <div class="field">

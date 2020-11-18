@@ -3,7 +3,7 @@
 <?php
 
     class Login extends Connection {
-        public function buscarCliente($email, $senha) {
+        public function verificarCredenciaisCliente($email, $senha) {
             try {
                 $pdo = Connection::getInstance();
                 $query = "SELECT * FROM tb_cliente WHERE email LIKE ? AND senha LIKE ?";
@@ -17,7 +17,7 @@
             }
         }
 
-        public function buscarTrabalhador($email, $senha) {
+        public function verificarCredenciaisTrabalhor($email, $senha) {
             try {
                 $pdo = Connection::getInstance();
                 $query = "SELECT * FROM tb_trabalhador WHERE email LIKE ? AND senha LIKE ?";
