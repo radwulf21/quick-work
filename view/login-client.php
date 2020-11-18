@@ -18,7 +18,7 @@
             <h2>Quick Work</h2>
         </header>
 
-        <form action="#" method="">
+        <form action="../controller/loginCliente.php" method="POST">
             <fieldset>
                 <legend>Login - Cliente</legend>
 

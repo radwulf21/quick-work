@@ -11,7 +11,7 @@
             <a href="update-info-worker.php">
                 <img src="../assets/image/user-cog-solid.svg" alt="Atualizar dados">
             </a>
-            <a href="#">
+            <a href="../controller/logoff.php">
                 <img src="../assets/image/sign-out-alt-solid.svg" alt="Sair">
             </a>
         </div> 

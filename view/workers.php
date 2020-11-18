@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
@@ -11,71 +13,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="page-workers">
-    <?php require_once "header-client.php"; ?>
+    <?php if (isset($_SESSION['login']) && $_SESSION['usuario'] == "Cliente") { ?>
 
-    <div id="container">
-        <form action="#" method="" class="form-search">
-            <input type="text" name="cidade" id="cidade" placeholder="Informe uma cidade" required>
+        <?php require_once "header-client.php"; ?>
 
-            <button type="submit" class="search-city">
-                <img src="../assets/image/search-solid.svg" alt="Pesquisar">
-            </button>
-        </form>
+        <div id="container">
+            <form action="#" method="" class="form-search">
+                <input type="text" name="cidade" id="cidade" placeholder="Informe uma cidade" required>
 
-        <hr>
+                <button type="submit" class="search-city">
+                    <img src="../assets/image/search-solid.svg" alt="Pesquisar">
+                </button>
+            </form>
 
-        <h1>Trabalhadores disponíveis</h1>
+            <hr>
 
-        <div class="cards">
-            <div class="card">
-                <div class="name-and-city">
-                    <h2>Marcos Guedes</h2>
-                    <p>Taguatinga</p>
+            <h1>Trabalhadores disponíveis</h1>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="name-and-city">
+                        <h2>Marcos Guedes</h2>
+                        <p>Taguatinga</p>
+                    </div>
+
+                    <p class="category">Hidráulica</p>
+
+                    <hr>
+
+                    <p class="description">
+                        Sou um trabalhador muito competente e experiente. Faço os meus serviços com excelência e nenhum cliente
+                        meu saiu insatisfeito com algum dos meus serviços. Tenho muita aptidão para trabalhar, pois minha 
+                        família depende disso.
+                    </p>
+
+                    <hr>
+                    
+                    <form action="#" method="" class="form-request-service">
+                        <input type="hidden" value="">
+                        <button type="submit" class="button-request-service">Solicitar serviços</button>
+                    </form>
                 </div>
 
-                <p class="category">Hidráulica</p>
+                <div class="card">
+                    <div class="name-and-city">
+                        <h2>Marcos Guedes</h2>
+                        <p>/</p>
+                        <p>Taguatinga</p>
+                    </div>
 
-                <hr>
+                    <p class="category">Hidráulica</p>
 
-                <p class="description">
-                    Sou um trabalhador muito competente e experiente. Faço os meus serviços com excelência e nenhum cliente
-                    meu saiu insatisfeito com algum dos meus serviços. Tenho muita aptidão para trabalhar, pois minha 
-                    família depende disso.
-                </p>
+                    <hr>
 
-                <hr>
-                
-                <form action="#" method="" class="form-request-service">
-                    <input type="hidden" value="">
-                    <button type="submit" class="button-request-service">Solicitar serviços</button>
-                </form>
-            </div>
+                    <p class="description">
+                        Sou um trabalhador muito competente e experiente. Faço os meus serviços com excelência e nenhum cliente
+                        meu saiu insatisfeito com algum dos meus serviços. Tenho muita aptidão para trabalhar, pois minha 
+                        família depende disso.
+                    </p>
 
-            <div class="card">
-                <div class="name-and-city">
-                    <h2>Marcos Guedes</h2>
-                    <p>/</p>
-                    <p>Taguatinga</p>
+                    <hr>
+                    
+                    <form action="#" method="" class="form-request-service">
+                        <input type="hidden" value="">
+                        <button type="submit" class="button-request-service">Solicitar serviços</button>
+                    </form>
                 </div>
-
-                <p class="category">Hidráulica</p>
-
-                <hr>
-
-                <p class="description">
-                    Sou um trabalhador muito competente e experiente. Faço os meus serviços com excelência e nenhum cliente
-                    meu saiu insatisfeito com algum dos meus serviços. Tenho muita aptidão para trabalhar, pois minha 
-                    família depende disso.
-                </p>
-
-                <hr>
-                
-                <form action="#" method="" class="form-request-service">
-                    <input type="hidden" value="">
-                    <button type="submit" class="button-request-service">Solicitar serviços</button>
-                </form>
             </div>
         </div>
-    </div>
+
+    <?php } else { header('Location:login-client.php'); } ?>
 </body>
 </html>

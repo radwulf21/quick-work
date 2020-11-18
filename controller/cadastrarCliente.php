@@ -4,12 +4,12 @@
 <?php
     $cliente = new Cliente;
 
-    $cliente->nome = $_POST['nome'];
-    $cliente->sobrenome = $_POST['sobrenome'];
-    $cliente->telefone = $_POST['telefone'];
-    $cliente->cidade = $_POST['cidade'];
-    $cliente->email = $_POST['email'];
-    $cliente->senha = md5($_POST['senha']);
+    $cliente->nome = utf8_decode($_POST['nome']);
+    $cliente->sobrenome = utf8_decode($_POST['sobrenome']);
+    $cliente->telefone = utf8_decode($_POST['telefone']);
+    $cliente->cidade = utf8_decode($_POST['cidade']);
+    $cliente->email = utf8_decode($_POST['email']);
+    $cliente->senha = utf8_decode(md5($_POST['senha']));
 
     $clienteDAO = new ClienteDAO;
 
