@@ -3,23 +3,14 @@
 <?php require_once '../model/utils/Codificacao.php'; ?>
 
 <?php
-    $dadosCliente = Codificacao::decodeArrayDataUtf8([
-        $_POST['nome'], 
-        $_POST['sobrenome'], 
-        $_POST['telefone'], 
-        $_POST['cidade'], 
-        $_POST['email'],
-        $_POST['senha']
-    ]);
-
     $cliente = new Cliente;
 
-    $cliente->nome      = $dadosCliente[0];
-    $cliente->sobrenome = $dadosCliente[1];
-    $cliente->telefone  = $dadosCliente[2];
-    $cliente->cidade    = $dadosCliente[3];
-    $cliente->email     = $dadosCliente[4];
-    $cliente->senha     = md5($dadosCliente[5]);
+    $cliente->nome      = $_POST['nome'];
+    $cliente->sobrenome = $_POST['sobrenome'];
+    $cliente->telefone  = $_POST['telefone'];
+    $cliente->cidade    = $_POST['cidade'];
+    $cliente->email     = $_POST['email'];
+    $cliente->senha     = md5($_POST['senha']);
 
     $clienteDAO = new ClienteDAO;
 

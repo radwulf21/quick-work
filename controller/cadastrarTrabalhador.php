@@ -3,27 +3,16 @@
 <?php require_once '../model/utils/Codificacao.php'; ?>
 
 <?php
-    $dadosTrabalhador = Codificacao::decodeArrayDataUtf8([
-        $_POST['nome'], 
-        $_POST['sobrenome'], 
-        $_POST['telefone'], 
-        $_POST['cidade'], 
-        $_POST['email'],
-        $_POST['senha'],
-        $_POST['descricao'],
-        $_POST['categoria']
-    ]);
-
     $trabalhador = new Trabalhador;
 
-    $trabalhador->nome         = $dadosTrabalhador[0];
-    $trabalhador->sobrenome    = $dadosTrabalhador[1];
-    $trabalhador->telefone     = $dadosTrabalhador[2];
-    $trabalhador->cidade       = $dadosTrabalhador[3];
-    $trabalhador->email        = $dadosTrabalhador[4];
-    $trabalhador->senha        = md5($dadosTrabalhador[5]);
-    $trabalhador->descricao    = $dadosTrabalhador[6];
-    $trabalhador->categoria_id = $dadosTrabalhador[7];
+    $trabalhador->nome         = $_POST['nome'];
+    $trabalhador->sobrenome    = $_POST['sobrenome'];
+    $trabalhador->telefone     = $_POST['telefone'];
+    $trabalhador->cidade       = $_POST['cidade'];
+    $trabalhador->email        = $_POST['email'];
+    $trabalhador->senha        = md5($_POST['senha']);
+    $trabalhador->descricao    = $_POST['descricao'];
+    $trabalhador->categoria_id = $_POST['categoria'];
 
     $trabalhadorDAO = new TrabalhadorDAO;
 

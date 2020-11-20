@@ -4,5 +4,4 @@
 <?php
     $clienteDAO = new ClienteDAO;
     $dadosCliente = $clienteDAO->buscarDadosCliente($_SESSION['id_cliente']);
-    $dadosCliente = Codificacao::encodeArrayDataUtf8($dadosCliente);
     return $dadosCliente;

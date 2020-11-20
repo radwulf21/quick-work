@@ -23,7 +23,7 @@
         public function buscarDadosCliente($id) {
             try {
                 $pdo = Connection::getInstance();
-                $query = "SELECT nome, sobrenome, telefone, cidade, email FROM tb_cliente WHERE id = ? GROUP BY id";
+                $query = "SELECT nome, sobrenome, telefone, cidade, email FROM tb_cliente WHERE id = ?";
                 $stmt = $pdo->prepare($query);
                 $stmt->bindValue(1, $id);
                 $stmt->execute();

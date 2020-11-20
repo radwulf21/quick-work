@@ -3,8 +3,8 @@
 <?php
     $log = new Login;
 
-    $email = utf8_decode($_POST['email']);
-    $senha = utf8_decode(md5($_POST['senha']));
+    $email = $_POST['email'];
+    $senha = md5($_POST['senha']);
 
     $trabalhador = $log->verificarCredenciaisTrabalhor($email, $senha);
 

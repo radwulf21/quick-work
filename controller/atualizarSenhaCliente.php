@@ -2,8 +2,8 @@
 
 <?php
     $id = $_POST['id'];
-    $senha =  utf8_decode(md5($_POST['senha']));
-    $confirmSenha = utf8_decode(md5($_POST['confirmacao_senha']));
+    $senha = md5($_POST['senha']);
+    $confirmSenha = md5($_POST['confirmacao_senha']);
 
     $clienteDAO = new ClienteDAO;
 

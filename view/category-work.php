@@ -21,27 +21,27 @@
             <h1>Selecione uma categoria</h1>
 
             <div class="cards">
-                <a class="card" href="#">
+                <a class="card" href="workers.php?categoria=1">
                     <h2>Hidráulica</h2>
                 </a>
 
-                <a class="card" href="#">
+                <a class="card" href="workers.php?categoria=2">
                     <h2>Elétrica</h2>
                 </a>
 
-                <a class="card" href="#">
+                <a class="card" href="workers.php?categoria=3">
                     <h2>Construção</h2>
                 </a>
 
-                <a class="card" href="#">
+                <a class="card" href="workers.php?categoria=4">
                     <h2>Marcenaria</h2>
                 </a>
 
-                <a class="card" href="#">
+                <a class="card" href="workers.php?categoria=5">
                     <h2>Serralheria</h2>
                 </a>
 
-                <a class="card" href="#">
+                <a class="card" href="workers.php?categoria=6">
                     <h2>Pintura</h2>
                 </a>
             </div>

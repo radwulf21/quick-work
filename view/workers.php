@@ -15,6 +15,8 @@
 <body id="page-workers">
     <?php if (isset($_SESSION['login']) && $_SESSION['usuario'] == "Cliente") { ?>
 
+        <?php require_once "../controller/buscarTrabalhadores.php"; ?>
+
         <?php require_once "header-client.php"; ?>
 
         <div id="container">
@@ -32,33 +34,11 @@
 
             <div class="cards">
                 <div class="card">
+
+                    <input type="hidden" name="id" id="id" value="">
+
                     <div class="name-and-city">
                         <h2>Marcos Guedes</h2>
-                        <p>Taguatinga</p>
-                    </div>
-
-                    <p class="category">Hidráulica</p>
-
-                    <hr>
-
-                    <p class="description">
-                        Sou um trabalhador muito competente e experiente. Faço os meus serviços com excelência e nenhum cliente
-                        meu saiu insatisfeito com algum dos meus serviços. Tenho muita aptidão para trabalhar, pois minha 
-                        família depende disso.
-                    </p>
-
-                    <hr>
-                    
-                    <form action="#" method="" class="form-request-service">
-                        <input type="hidden" value="">
-                        <button type="submit" class="button-request-service">Solicitar serviços</button>
-                    </form>
-                </div>
-
-                <div class="card">
-                    <div class="name-and-city">
-                        <h2>Marcos Guedes</h2>
-                        <p>/</p>
                         <p>Taguatinga</p>
                     </div>
 
@@ -80,6 +60,7 @@
                     </form>
                 </div>
             </div>
+
         </div>
 
     <?php } else { header('Location:login-client.php'); } ?>

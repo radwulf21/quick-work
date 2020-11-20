@@ -33,24 +33,24 @@
                         <div class="field-group">
                             <div class="field">
                                 <label for="nome">Nome</label>
-                                <input type="text" name="nome" id="nome" value="<?php echo $dadosCliente[0]; ?>" required>
+                                <input type="text" name="nome" id="nome" value="<?php echo $dadosCliente['nome']; ?>" required>
                             </div>
 
                             <div class="field">
                                 <label for="sobrenome">Sobrenome</label>
-                                <input type="text" name="sobrenome" id="sobrenome"value="<?php echo $dadosCliente[1]; ?>" required>
+                                <input type="text" name="sobrenome" id="sobrenome"value="<?php echo $dadosCliente['sobrenome']; ?>" required>
                             </div>
                         </div>
 
                         <div class="field-group">
                             <div class="field">
                                 <label for="telefone">Telefone</label>
-                                <input type="text" name="telefone" id="telefone" value="<?php echo $dadosCliente[2]; ?>" required>
+                                <input type="text" name="telefone" id="telefone" value="<?php echo $dadosCliente['telefone']; ?>" required>
                             </div>
 
                             <div class="field">
                                 <label for="cidade">Cidade</label>
-                                <input list="cidades" name="cidade" id="cidade" placeholder="Selecione" value="<?php echo $dadosCliente[3]; ?>" required>
+                                <input list="cidades" name="cidade" id="cidade" placeholder="Selecione" value="<?php echo $dadosCliente['cidade']; ?>" required>
                                 <datalist id="cidades">
                                     <option value="Brasília">
                                     <option value="Riacho Fundo">
@@ -86,7 +86,7 @@
                         <div class="field-group">
                             <div class="field">
                                 <label for="email">E-mail</label>
-                                <input type="text" name="email" id="email" value="<?php echo $dadosCliente[4]; ?>" required>
+                                <input type="text" name="email" id="email" value="<?php echo $dadosCliente['email']; ?>" required>
                             </div>
                         </div>
                     </fieldset>
