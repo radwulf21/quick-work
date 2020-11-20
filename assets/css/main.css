@@ -45,4 +45,5 @@ textarea {
     width: 90vw;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 0.1rem; /* Para ajustar o bug do css que não estava aplicando o margin-bottom nas páginas */
 }

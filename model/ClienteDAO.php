@@ -50,4 +50,37 @@
                 $erro->getMessage();
             }
         }
+
+        public function validarNovaSenha($senha, $confirmSenha) {
+            try {
+                return $senha == $confirmSenha;
+            } catch (ErrorException $erro) {
+                $erro->getMessage();
+            }
+        }
+
+        public function alterarSenhaCliente($id, $senha) {
+            try {
+                $pdo = Connection::getInstance();
+                $query = "UPDATE tb_cliente SET senha = ? WHERE id = ?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindValue(1, $senha);
+                $stmt->bindValue(2, $id);
+                $stmt->execute();
+            } catch (PDOException $erro) {
+                $erro->getMessage();
+            }
+        }
+
+        public function apagarContaCliente($id) {
+            try {
+                $pdo = Connection::getInstance();
+                $query = "DELETE FROM tb_cliente WHERE id = ?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindValue(1, $id);
+                $stmt->execute();
+            } catch (PDOException $erro) {
+                $erro->getMessage();
+            }
+        }
     }

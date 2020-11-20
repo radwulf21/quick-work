@@ -96,9 +96,11 @@
 
                 <hr>
 
-                <form action="#" method="" class="form-update-password">
-                    <input type="hidden" value="">
+                <form action="../controller/atualizarSenhaCliente.php" method="POST" class="form-update-password">
                     <fieldset>
+
+                        <input type="hidden" name="id" id="id" value="<?php echo $_SESSION['id_cliente']; ?>">
+
                         <div class="field-group">
                             <div class="field">
                                 <label for="nome">Nova senha</label>
@@ -119,8 +121,8 @@
 
                 <hr>
                 
-                <form action="#" method="" class="form-delete-account">
-                    <input type="hidden" value="">
+                <form action="../controller/apagarContaCliente.php" method="POST" class="form-delete-account">
+                    <input type="hidden" name="id" id="id" value="<?php echo $_SESSION['id_cliente']; ?>">
                     <button type="submit" class="button button-delete-account">Apagar conta</button>
                 </form>
             </div>
