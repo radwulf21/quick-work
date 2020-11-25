@@ -81,4 +81,71 @@
                 $erro->getMessage();
             }
         }
+
+        public function buscarDadosTrabalhador($id) {
+            try {
+                $pdo = Connection::getInstance();
+                $query = "SELECT nome, sobrenome, telefone, cidade, email, descricao FROM tb_trabalhador WHERE id = ?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindValue(1, $id);
+                $stmt->execute();
+                return $stmt->fetch();
+            } catch (PDOException $erro) {
+                $erro->getMessage();
+            }
+        }
+
+        public function alterarDadosTrabalhador($trabalhador) {
+            try {
+                $pdo = Connection::getInstance();
+                $query = "UPDATE tb_trabalhador 
+                    SET nome = ?, sobrenome = ?, telefone = ?, cidade = ?, email = ?, descricao = ?, categoria_id = ?
+                    WHERE id = ?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindValue(1, $trabalhador->nome);
+                $stmt->bindValue(2, $trabalhador->sobrenome);
+                $stmt->bindValue(3, $trabalhador->telefone);
+                $stmt->bindValue(4, $trabalhador->cidade);
+                $stmt->bindValue(5, $trabalhador->email);
+                $stmt->bindValue(6, $trabalhador->descricao);
+                $stmt->bindValue(7, $trabalhador->categoria_id);
+                $stmt->bindValue(8, $trabalhador->id);
+                $stmt->execute();
+            } catch (PDOException $erro) {
+                $erro->getMessage();
+            }
+        }
+
+        public function validarNovaSenha($senha, $confirmSenha) {
+            try {
+                return $senha == $confirmSenha;
+            } catch (ErrorException $erro) {
+                $erro->getMessage();
+            }
+        }
+
+        public function alterarSenhaTrabalhador($id, $senha) {
+            try {
+                $pdo = Connection::getInstance();
+                $query = "UPDATE tb_trabalhador SET senha = ? WHERE id = ?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindValue(1, $senha);
+                $stmt->bindValue(2, $id);
+                $stmt->execute();
+            } catch (PDOException $erro) {
+                $erro->getMessage();
+            }
+        }
+
+        public function apagarContaTrabalhador($id) {
+            try {
+                $pdo = Connection::getInstance();
+                $query = "DELETE FROM tb_trabalhador WHERE id = ?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindValue(1, $id);
+                $stmt->execute();
+            } catch (PDOException $erro) {
+                $erro->getMessage();
+            }
+        }
     }

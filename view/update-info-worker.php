@@ -15,6 +15,8 @@
 <body id="page-update-info">
     <?php if (isset($_SESSION['login']) && $_SESSION['usuario'] == "Trabalhador") { ?>
 
+        <?php require_once '../controller/buscarDadosTrabalhador.php'; ?>
+
         <?php require_once "header-worker.php"; ?>
 
         <div id="container">
@@ -22,33 +24,33 @@
             <div class="card">
                 <h1>Atualizar dados de trabalhador</h1>
 
-                <form action="#" method="" class="form-personal-data">
+                <form action="../controller/atualizarDadosTrabalhador.php" method="POST" class="form-personal-data">
                     <fieldset>
                         <legend>Dados Pessoais</legend>
 
-                        <input type="hidden" name="id" value="">
+                        <input type="hidden" name="id" value="<?php echo $_SESSION['id_trabalhador'] ?>">
 
                         <div class="field-group">
                             <div class="field">
                                 <label for="nome">Nome</label>
-                                <input type="text" name="nome" id="nome" required>
+                                <input type="text" name="nome" id="nome" required value="<?php echo $dadosTrabalhador['nome'] ?>">
                             </div>
 
                             <div class="field">
                                 <label for="sobrenome">Sobrenome</label>
-                                <input type="text" name="sobrenome" id="sobrenome" required>
+                                <input type="text" name="sobrenome" id="sobrenome" required value="<?php echo $dadosTrabalhador['sobrenome'] ?>">
                             </div>
                         </div>
 
                         <div class="field-group">
                             <div class="field">
                                 <label for="telefone">Telefone</label>
-                                <input type="text" name="telefone" id="telefone" required>
+                                <input type="text" name="telefone" id="telefone" required value="<?php echo $dadosTrabalhador['telefone'] ?>">
                             </div>
 
                             <div class="field">
                                 <label for="cidade">Cidade</label>
-                                <input list="cidades" name="cidade" id="cidade" placeholder="Selecione" required>
+                                <input list="cidades" name="cidade" id="cidade" placeholder="Selecione" required value="<?php echo $dadosTrabalhador['cidade'] ?>">
                                 <datalist id="cidades">
                                     <option value="Brasília">
                                     <option value="Riacho Fundo">
@@ -84,7 +86,7 @@
                         <div class="field-group">
                             <div class="field">
                                 <label for="email">E-mail</label>
-                                <input type="text" name="email" id="email" required>
+                                <input type="text" name="email" id="email" required value="<?php echo $dadosTrabalhador['email'] ?>">
                             </div>
                         </div>
                     </fieldset>
@@ -110,7 +112,7 @@
                         <div class="field-group">
                             <div class="field">
                                 <label for="descricao">Descrição</label>
-                                <textarea name="descricao" id="descricao" required></textarea>
+                                <textarea name="descricao" id="descricao" required><?php echo $dadosTrabalhador['descricao'] ?></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -120,9 +122,11 @@
 
                 <hr>
 
-                <form action="#" method="" class="form-update-password">
-                    <input type="hidden" value="">
+                <form action="../controller/atualizarSenhaTrabalhador.php" method="POST" class="form-update-password">
                     <fieldset>
+
+                        <input type="hidden" name="id" id="id" value="<?php echo $_SESSION['id_trabalhador']; ?>">
+
                         <div class="field-group">
                             <div class="field">
                                 <label for="nome">Nova senha</label>
@@ -143,8 +147,8 @@
 
                 <hr>
                 
-                <form action="#" method="" class="form-delete-account">
-                    <input type="hidden" value="">
+                <form action="../controller/apagarContaTrabalhador.php" method="POST" class="form-delete-account">
+                    <input type="hidden" name="id" id="id" value="<?php echo $_SESSION['id_trabalhador']; ?>">
                     <button type="submit" class="button button-delete-account">Apagar conta</button>
                 </form>
             </div>

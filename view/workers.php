@@ -43,7 +43,9 @@
                     <hr>
                     
                     <form action="#" method="" class="form-request-service">
-                        <input type="hidden" name="id" id="id" value="<?php echo $trabalhador['id_trabalhador'] ?>">
+                        <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $_SESSION['id_cliente'] ?>">
+                        <input type="hidden" name="id_trabalhador" id="id_trabalhador" value="<?php echo $trabalhador['id_trabalhador'] ?>">
+                        <input type="hidden" name="categoriad_id" id="categoriad_id" value="<?php echo $trabalhador['categoriad_id'] ?>">
                         <button type="submit" class="button-request-service">Solicitar serviços</button>
                     </form>
                 </div>
