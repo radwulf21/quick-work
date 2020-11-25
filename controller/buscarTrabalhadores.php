@@ -3,6 +3,11 @@
 
 <?php
     $trabalhadorDAO = new TrabalhadorDAO;
-    $trabalhadores = $trabalhadorDAO->listarTodosTrabalhadores();
-    
-    print_r($trabalhadores);
+
+    if (isset($_GET['categoria'])) {
+        $trabalhadores = $trabalhadorDAO->buscarTrabalhadoresPorCategoria($_GET['categoria']);
+        return $trabalhadores;
+    } else {
+        $trabalhadores = $trabalhadorDAO->buscarDadosTrabalhadores();
+        return $trabalhadores;
+    }

@@ -5,7 +5,8 @@
 #container h1 {
     font: 500 3rem Poppins;
 
-    margin: 4rem 0;
+    margin: 2rem 0;
+    margin-top: 4rem;
 }
 
 .cards {

@@ -17,7 +17,7 @@
             }
         }
 
-        public function verificarCredenciaisTrabalhor($email, $senha) {
+        public function verificarCredenciaisTrabalhador($email, $senha) {
             try {
                 $pdo = Connection::getInstance();
                 $query = "SELECT * FROM tb_trabalhador WHERE email LIKE ? AND senha LIKE ?";

@@ -6,7 +6,7 @@
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
 
-    $trabalhador = $log->verificarCredenciaisTrabalhor($email, $senha);
+    $trabalhador = $log->verificarCredenciaisTrabalhador($email, $senha);
 
     if ($trabalhador != null) {
         $log->login();

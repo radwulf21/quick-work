@@ -14,52 +14,42 @@
 </head>
 <body id="page-workers">
     <?php if (isset($_SESSION['login']) && $_SESSION['usuario'] == "Cliente") { ?>
-
         <?php require_once "../controller/buscarTrabalhadores.php"; ?>
 
         <?php require_once "header-client.php"; ?>
 
         <div id="container">
-            <form action="#" method="" class="form-search">
-                <input type="text" name="cidade" id="cidade" placeholder="Informe uma cidade" required>
-
-                <button type="submit" class="search-city">
-                    <img src="../assets/image/search-solid.svg" alt="Pesquisar">
-                </button>
-            </form>
+            <h1>Trabalhadores disponíveis</h1>
 
             <hr>
 
-            <h1>Trabalhadores disponíveis</h1>
+            <?php foreach($trabalhadores as $trabalhador) { ?>
 
             <div class="cards">
                 <div class="card">
-
-                    <input type="hidden" name="id" id="id" value="">
-
                     <div class="name-and-city">
-                        <h2>Marcos Guedes</h2>
-                        <p>Taguatinga</p>
+                        <h2><?php echo $trabalhador['nome_trabalhador'] ." ". $trabalhador['sobrenome_trabalhador'] ?></h2>
+                        <p><?php echo $trabalhador['cidade_trabalhador'] ?></p>
                     </div>
 
-                    <p class="category">Hidráulica</p>
+                    <p class="category"><?php echo $trabalhador['nome_categoria'] ?></p>
 
                     <hr>
 
                     <p class="description">
-                        Sou um trabalhador muito competente e experiente. Faço os meus serviços com excelência e nenhum cliente
-                        meu saiu insatisfeito com algum dos meus serviços. Tenho muita aptidão para trabalhar, pois minha 
-                        família depende disso.
+                        <?php echo $trabalhador['desc_trabalhador'] ?>
                     </p>
 
                     <hr>
                     
                     <form action="#" method="" class="form-request-service">
-                        <input type="hidden" value="">
+                        <input type="hidden" name="id" id="id" value="<?php echo $trabalhador['id_trabalhador'] ?>">
                         <button type="submit" class="button-request-service">Solicitar serviços</button>
                     </form>
                 </div>
             </div>
+
+            <?php } ?>
 
         </div>
 

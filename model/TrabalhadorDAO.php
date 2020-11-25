@@ -23,54 +23,60 @@
             }
         }
 
-        public function listarTodosTrabalhadores() {
+        public static function definirFetchOuFetchAll($stmt) {
+            $linhas = $stmt->rowCount();
+            if ($linhas == 1) {
+                $result[] = $stmt->fetch();
+                return $result;
+            } else {
+                $result = $stmt->fetchAll();
+                return $result;
+            }
+        }
+
+        public function buscarDadosTrabalhadores() {
             try {
                 $pdo = Connection::getInstance();
-                $query = "SELECT t.id, 
-                                 t.nome, 
-                                 t.sobrenome, 
-                                 t.telefone, 
-                                 t.cidade, 
-                                 t.email, 
-                                 t.descricao,
-                                 c.nome
+                $query = "SELECT    t.id as 'id_trabalhador', 
+                                    t.nome as 'nome_trabalhador', 
+                                    t.sobrenome as 'sobrenome_trabalhador', 
+                                    t.telefone as 'telefone_trabalhador', 
+                                    t.cidade as 'cidade_trabalhador', 
+                                    t.email as 'email_trabalhador', 
+                                    t.descricao as 'desc_trabalhador',
+                                    t.categoria_id as 'categoriad_id',
+                                    c.nome as 'nome_categoria'
                         FROM tb_trabalhador t
                         JOIN tb_categoria c ON c.id = t.categoria_id"; 
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
-                $linhas = $stmt->rowCount();
-                if ($linhas == 1) {
-                    return $stmt->fetch();
-                } else {
-                    return $stmt->fetchAll();
-                }
+
+                return TrabalhadorDAO::definirFetchOuFetchAll($stmt);
             } catch (PDOException $erro) {
                 $erro->getMessage();
             }
         }
 
-        public function pesquisarTrabalhadoresCategoria($categoria_id) {
+        public function buscarTrabalhadoresPorCategoria($categoria_id) {
             try {
                 $pdo = Connection::getInstance();
-                $query = "SELECT * FROM tb_trabalhador WHERE categoria_id = ?";
+                $query = "SELECT    t.id as 'id_trabalhador', 
+                                    t.nome as 'nome_trabalhador', 
+                                    t.sobrenome as 'sobrenome_trabalhador', 
+                                    t.telefone as 'telefone_trabalhador', 
+                                    t.cidade as 'cidade_trabalhador', 
+                                    t.email as 'email_trabalhador', 
+                                    t.descricao as 'desc_trabalhador',
+                                    t.categoria_id as 'categoriad_id',
+                                    c.nome as 'nome_categoria'
+                        FROM tb_trabalhador t
+                        JOIN tb_categoria c ON c.id = t.categoria_id
+                        WHERE categoria_id = ?"; 
                 $stmt = $pdo->prepare($query);
                 $stmt->bindValue(1, $categoria_id);
                 $stmt->execute();
-                return $stmt->fetch();
-            } catch (PDOException $erro) {
-                $erro->getMessage();
-            }
-        }
 
-        public function pesquisarTrabalhadoresCategoriaECidade($categoria_id, $cidade) {
-            try {
-                $pdo = Connection::getInstance();
-                $query = "SELECT * FROM tb_trabalhador WHERE categoria_id = ? AND cidade = %?%";
-                $stmt = $pdo->prepare($query);
-                $stmt->bindValue(1, $categoria_id);
-                $stmt->bindValue(2, $cidade);
-                $stmt->execute();
-                return $stmt->fetch();
+                return TrabalhadorDAO::definirFetchOuFetchAll($stmt);
             } catch (PDOException $erro) {
                 $erro->getMessage();
             }

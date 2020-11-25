@@ -20,6 +20,8 @@
         <div id="container">
             <h1>Selecione uma categoria</h1>
 
+            <hr>
+
             <div class="cards">
                 <a class="card" href="workers.php?categoria=1">
                     <h2>Hidráulica</h2>

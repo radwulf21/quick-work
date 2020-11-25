@@ -97,7 +97,7 @@
                     <div class="field">
                         <label for="categoria">Categoria</label>
                         <select name="categoria" id="categoria" required>
-                            <option value="">Selecione</option>
+                            <option value="" hidden>Selecione</option>
                             <option value="1">Hidráulica</option>
                             <option value="2">Elétrica</option>
                             <option value="3">Construção</option>

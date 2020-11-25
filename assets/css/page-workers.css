@@ -2,61 +2,13 @@
     background: var(--color-background);
 }
 
-.form-search {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin: 4rem 0 2rem;
-}
-
-.form-search input {
-    background-color: var(--color-box-base);
-
-    padding: 1rem 2rem;
-
-    border: 0;
-    border-radius: 0.8rem;
-
-    width: 100%;
-
-    margin-right: 2rem;
-}
-
-.form-search .search-city {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: var(--color-primary);
-
-    border: 0;
-    border-radius: 0.8rem;
-
-    height: 4rem;
-    width: 5rem;
-
-    cursor: pointer;
-
-    transition: 400ms;
-
-    outline: none;
-}
-
-.form-search .search-city:hover {
-    transform: translateY(-0.3rem);
-    background-color: var(--color-primary-dark);
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
-}
-
-.form-search .search-city img {
-    width: 2.6rem;
-    height: 2.6rem;
-}
-
 #container h1 {
     font: 500 3rem Poppins;
 
+    margin-top: 4rem;
+}
+
+hr {
     margin-top: 2rem;
 }
 
