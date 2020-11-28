@@ -12,6 +12,8 @@
         $log->login();
         $_SESSION['usuario'] = 'Trabalhador';
         $_SESSION['id_trabalhador'] = $trabalhador['id'];
+        $_SESSION['nome_trabalhador'] = $trabalhador['nome'];
+        $_SESSION['sobrenome_trabalhador'] = $trabalhador['sobrenome'];
         
         header('Location:../view/service-remaining.php');
     } else {

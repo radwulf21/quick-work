@@ -3,7 +3,7 @@
         <h2>Quick Work</h2>
 
         <div class="options">
-            <h2>Márcio Guedes</h2>
+            <h2><h2><?php echo $_SESSION['nome_trabalhador']; echo " "; echo  $_SESSION['sobrenome_trabalhador']; ?></h2></h2>
 
             <a href="service-remaining.php">
                 <img src="../assets/image/wrench-solid.svg" alt="Serviços remanescentes">

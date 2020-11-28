@@ -58,16 +58,16 @@
 
                                 <hr>
 
-                                <form class="form-desc-service" action="#" method="POST">
-                                    <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $_SESSION['id_cliente'] ?>">
-                                    <input type="hidden" name="id_trabalhador" id="id_trabalhador" value="<?php echo $trabalhador['id_trabalhador'] ?>">
-                                    <input type="hidden" name="categoriad_id" id="categoriad_id" value="<?php echo $trabalhador['categoriad_id'] ?>">
+                                <form class="form-desc-service" action="../controller/cadastrarServico.php" method="POST">
+                                    <input type="hidden" name="cliente_id" id="cliente_id" value="<?php echo $_SESSION['id_cliente'] ?>">
+                                    <input type="hidden" name="trabalhador_id" id="trabalhador_id" value="<?php echo $trabalhador['id_trabalhador'] ?>">
+                                    <input type="hidden" name="categoria_id" id="categoria_id" value="<?php echo $trabalhador['categoriad_id'] ?>">
 
                                     <p>
                                         Preencha o campo com uma <strong>descrição</strong> breve do seu <strong>problema.</strong>
                                     </p>
 
-                                    <textarea name="descricao_servico" id="descricao_servico" required></textarea>
+                                    <textarea name="descricao" id="descricao" required></textarea>
 
                                     <button type="submit" class="btn btn-send-request">Enviar solicitação</button>
                                 </form>

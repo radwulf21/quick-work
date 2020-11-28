@@ -3,7 +3,7 @@
         <h2>Quick Work</h2>
 
         <div class="options">
-            <h2>Lucas Guedes</h2>
+            <h2><?php echo $_SESSION['nome_cliente']; echo " "; echo  $_SESSION['sobrenome_cliente']; ?></h2>
 
             <a href="category-work.php">
                 <img src="../assets/image/globe-solid.svg" alt="Buscar trabalhadores">

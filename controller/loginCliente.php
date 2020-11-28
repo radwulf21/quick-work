@@ -12,6 +12,8 @@
         $log->login();
         $_SESSION['usuario'] = 'Cliente';
         $_SESSION['id_cliente'] = $cliente['id'];
+        $_SESSION['nome_cliente'] = $cliente['nome'];
+        $_SESSION['sobrenome_cliente'] = $cliente['sobrenome'];
         
         header('Location:../view/category-work.php');
     } else {
