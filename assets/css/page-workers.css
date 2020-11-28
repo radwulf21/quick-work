@@ -17,6 +17,9 @@ hr {
     align-items: center;
     justify-content: center;
 
+    font-size: 3rem;
+    margin-top: 4rem;
+
     color: var(--color-primary-danger);
     font-weight: bold;
 }

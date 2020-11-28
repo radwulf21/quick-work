@@ -14,6 +14,16 @@ const showModal = (modalId) => {
 
 const selectButtonRequestService = document.querySelector('.button-request-service');
 
-selectButtonRequestService.addEventListener("click", _ => {
-    showModal("container-modal");
-})
+if (selectButtonRequestService != null) {
+    selectButtonRequestService.addEventListener("click", _ => {
+        showModal("container-modal");
+    })
+}
+
+const selectButtonCloseModal = document.querySelector('.button-close-request');
+
+if (selectButtonCloseModal != null) {
+    selectButtonCloseModal.addEventListener("click", _ => {
+        showModal("container-modal");
+    })
+}

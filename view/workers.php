@@ -81,7 +81,7 @@
 
             <?php } else { ?>
 
-                <h1 class="msg-notfound">Nenhum resultado encontrado</h1>
+                <p class="msg-notfound">Nenhum resultado encontrado</p>
 
             <?php } ?>
 

@@ -3,26 +3,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <div id="container-modal">
-    <div class="modal modal-desc-service">
+    <div class="modal modal-close-request">
         <div class="modal-header">
-            <h3>Descrição do serviço</h3>
-            <a href="#">
-                <img src="../assets/image/times-solid.svg" alt="" width="30px" height="30px">
-            </a>
+            <h3>Fechar solicitação</h3>
+            
+            <img class="close-modal" src="../assets/image/times-solid.svg" alt="Fechar">
         </div>
 
         <hr>
 
-        <form class="form-desc-service" action="#" method="POST">
+        <form class="form-close-request" action="#" method="POST">
             <p>
-                Preencha o campo com uma <strong>descrição</strong> breve do seu <strong>problema.</strong>
+                Ao fechar a solicitação, ela será desfeita e apagada do sistema. Deseja realmente <strong>fechar</strong> essa solicitação?
             </p>
 
-            <textarea name="descricao_servico" id="descricao_servico" required>
-
-            </textarea>
-
-            <button type="submit" class="btn btn-send-request">Enviar solicitação</button>
+            <button type="submit" class="btn btn-close-request">Enviar solicitação</button>
         </form>
     </div>
 </div>

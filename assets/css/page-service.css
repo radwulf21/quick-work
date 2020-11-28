@@ -9,6 +9,18 @@
     margin-bottom: 2rem;
 }
 
+.msg-notfound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 3rem;
+    margin-top: 4rem;
+
+    color: var(--color-primary-danger);
+    font-weight: bold;
+}
+
 .cards {
     margin-bottom: 2rem;
 
@@ -92,7 +104,7 @@
 }
 
 .cards .card .service-options .button-contact-whatsapp {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
 
@@ -132,11 +144,11 @@
 }
 
 /* Estilo para botão de terminar serviços */
-.cards .card .service-options .form-close-request .button-close-request {
+.cards .card .service-options .button-close-request {
     background: var(--color-primary-danger);
 }
 
-.cards .card .service-options .form-close-request .button-close-request:hover {
+.cards .card .service-options .button-close-request:hover {
     transform: translateY(-0.3rem);
     background-color: var(--color-primary-danger-dark);
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
