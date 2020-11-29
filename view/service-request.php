@@ -56,7 +56,7 @@
                         <hr>
 
                         <div class="service-options">
-                            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55 <?php echo $infoServico['telefone_trabalhador'] ?>&text=Olá aqui é <?php echo $infoServico['nome_cliente']; ?> da Quick Work." class="button button-contact-whatsapp" target="blank">
+                            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55 <?php echo $infoServico['telefone_trabalhador'] ?>&text=Olá aqui é <?php echo $infoServico['nome_cliente']; ?>, cliente da Quick Work." class="button button-contact-whatsapp" target="blank">
                                 <img src="../assets/image/whatsapp.svg" alt="Contato WhatsApp">
                                 Contato
                             </a>

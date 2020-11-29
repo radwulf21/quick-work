@@ -71,10 +71,6 @@
     margin-bottom: 4rem;
 }
 
-.card .form-delete-account {
-    margin-top: 4rem;
-}
-
 .button {
     text-decoration: none;
     outline: none;
@@ -117,6 +113,8 @@
 }
 
 .button-delete-account {
+    margin-top: 4rem;
+
     background: var(--color-primary-danger);
 }
 

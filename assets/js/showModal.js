@@ -12,6 +12,15 @@ const showModal = (modalId) => {
     }
 }
 
+const selectButtonDeleteAccount = document.querySelector('.button-delete-account');
+
+if (selectButtonDeleteAccount != null) {
+    selectButtonDeleteAccount.addEventListener("click", _ => {
+        showModal("container-modal");
+    })
+}
+
+
 const selectButtonRequestService = document.querySelector('.button-request-service');
 
 if (selectButtonRequestService != null) {
@@ -20,10 +29,26 @@ if (selectButtonRequestService != null) {
     })
 }
 
-const selectButtonCloseModal = document.querySelector('.button-close-request');
+const selectButtonCloseRequest = document.querySelector('.button-close-request');
 
-if (selectButtonCloseModal != null) {
-    selectButtonCloseModal.addEventListener("click", _ => {
+if (selectButtonCloseRequest != null) {
+    selectButtonCloseRequest.addEventListener("click", _ => {
         showModal("container-modal");
+    })
+}
+
+const selectButtonConfirmService = document.querySelector('.button-confirm-service');
+
+if (selectButtonConfirmService != null) {
+    selectButtonConfirmService.addEventListener("click", _ => {
+        showModal("container-modal-confirm-service");
+    })
+}
+
+const selectButtonFinishService = document.querySelector('.button-finish-service');
+
+if (selectButtonFinishService != null) {
+    selectButtonFinishService.addEventListener("click", _ => {
+        showModal("container-modal-finish-service");
     })
 }

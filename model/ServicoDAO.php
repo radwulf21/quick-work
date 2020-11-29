@@ -57,12 +57,64 @@
             }
         }
 
+        public function buscarServicosRemanescentes($id_trabalhador) {
+            try {
+                $pdo = Connection::getInstance();
+                $query = "SELECT	s.id        'id_servico',
+                                    c.nome      'nome_cliente',
+                                    c.sobrenome 'sobrenome_cliente',
+                                    c.cidade    'cidade_cliente',
+                                    c.telefone  'telefone_cliente',
+                                    st.nome     'nome_status',
+                                    s.descricao 'descricao_servico',
+                                    t.nome      'nome_trabalhador'
+                            FROM tb_servico s
+                            JOIN tb_trabalhador t ON s.trabalhador_id = t.id
+                            JOIN tb_status st     ON s.status_id      = st.id
+                            JOIN tb_cliente c     ON s.cliente_id     = c.id
+                            WHERE s.trabalhador_id = ?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindValue(1, $id_trabalhador);
+                $stmt->execute();
+
+                return ServicoDAO::definirFetchOuFetchAll($stmt);
+            } catch (PDOException $erro) {
+                $erro->getMessage();
+            }
+        }
+
         public function fecharSolicitacaoServico($id_servico) {
             try {
                 $pdo = Connection::getInstance();
                 $query = "DELETE FROM tb_servico WHERE id = ?";
                 $stmt = $pdo->prepare($query);
                 $stmt->bindValue(1, $id_servico);
+                $stmt->execute();
+            } catch (PDOException $erro) {
+                $erro->getMessage();
+            }
+        }
+
+        public function confirmarServico($id_servico) {
+            try {
+                $pdo = Connection::getInstance();
+                $query = "UPDATE tb_servico SET status_id = ? WHERE id = ?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindValue(1, 2);
+                $stmt->bindValue(2, $id_servico);
+                $stmt->execute();
+            } catch (PDOException $erro) {
+                $erro->getMessage();
+            }
+        }
+
+        public function terminarServico($id_servico) {
+            try {
+                $pdo = Connection::getInstance();
+                $query = "UPDATE tb_servico SET status_id = ? WHERE id = ?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindValue(1, 3);
+                $stmt->bindValue(2, $id_servico);
                 $stmt->execute();
             } catch (PDOException $erro) {
                 $erro->getMessage();
